@@ -1,11 +1,12 @@
 var express = require('express');
 var bodyparser = require("body-parser");
-var Proxify = require("./app.js");
+var Proxify = require("./server/app.js");
 
 var app = express();
 app.set('port', (process.env.PORT || 8080));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
+app.use(express.static('public'));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
