@@ -17,7 +17,7 @@ function getInfo() {
             (response.data["videos"]).forEach(video_detail => {
                 document.getElementById('yt_details').innerHTML += generateResult(video_detail);
             });
-            
+
             //document.getElementById('yt_view').innerHTML = "<video width='640px' height='360px' src='../video.mp4' controls></video>";
         })
         .catch(function (error) {
@@ -39,6 +39,9 @@ function playVideo(url) {
         vext: url.split(",")[1]
     }).then((response) => {
         console.log(response.data);
+
+        document.getElementById('yt_view').innerHTML = `<video width='640px' height='360px' src='${response.data}' controls></video>`;
+
     }).catch((err) => {
         console.log(err);
     });

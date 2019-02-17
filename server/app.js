@@ -1,5 +1,6 @@
 const { DownloaderHelper } = require('node-downloader-helper');//require('ytdl-core');
 const fs = require('fs');
+const rmdir = require('rimraf');
 const request = require('request');
 const yt_handler = require('./yt_handler');
 
@@ -60,18 +61,24 @@ var router = (app) => {
 
         console.log(req.body);
 
-       dmgr = new DownloaderHelper(req.body.vurl, "./public/", { fileName: "video." + req.body.vext});
+        // rmdir.sync()
+        rmdir.sync("./public/videos");
+        fs.mkdirSync("./public/videos");
+
+       dmgr = new DownloaderHelper(req.body.vurl, "./public/videos", { fileName: "video." + req.body.vext});
 
        dmgr.on('progress', (stats) => console.log(stats));
 
        dmgr.on('end', () => {
-           res.send("../video." + req.body.vext);
+           res.send("../videos/video." + req.body.vext);
        });
 
        dmgr.on('error', (err) => {
            res.err(err);
            console.log(err);
        });
+
+       dmgr.start();
 
     });
 
