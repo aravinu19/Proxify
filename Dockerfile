@@ -3,7 +3,7 @@ FROM ubuntu:bionic
 WORKDIR /usr/local/proxify
 COPY . /usr/local/proxify
 
-RUN apt update && apt install npm
+RUN apt update && apt install npm -y
 RUN npm i n
 RUN n latest
 
