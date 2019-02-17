@@ -8,6 +8,6 @@ RUN npm i -g n
 RUN n latest
 
 RUN npm install
-RUN npm start
+CMD npm start
 
 EXPOSE 80 8080
