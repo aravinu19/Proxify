@@ -1,0 +1,11 @@
+
+#btn1 {
+    box-shadow: 5px 3px grey;
+    border-radius: 7px; margin: 5px;
+    width: 65%;
+}
+
+#btn2:hover {
+    box-shadow: 7px 7px grey;
+    border-radius: 7px; margin: 5px;
+}

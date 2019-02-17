@@ -1,16 +1,25 @@
 {
   "name": "Proxify",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple proxy server, which displays pages that are restricted in your network.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Aravind RaJ",
   "license": "ISC",
+  "repository": {
+    "type": "GIT",
+    "url": "https://github.com/aravinu19/Proxify.git"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "node-downloader-helper": "^1.0.10",
+    "request": "^2.88.0",
+    "youtube-dl": "^1.12.2",
+    "ytdl-core": "^0.29.1"
   }
 }
