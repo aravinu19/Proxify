@@ -82,6 +82,29 @@ var router = (app) => {
 
     });
 
+    app.post('/search', (req, res) => {
+
+        let search_keywords = req.body.search_keywords;
+        let youtube_search_api = "https://www.youtube.com/results?search_query=";
+
+        request(`${youtube_search_api + search_keywords}`, (error, query_response, query_html) => {
+
+            if(error){
+                console.log(error);
+                res.status(500).send(error);
+            }
+
+            // console.log(query_response.body.toString());
+
+            
+            res.send("OKAY DA");
+
+            
+
+        });
+
+    });
+
 
 };
 

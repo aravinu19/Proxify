@@ -19,8 +19,6 @@
     "express": "^4.16.4",
     "node-downloader-helper": "^1.0.10",
     "request": "^2.88.0",
-    "rimraf": "^2.6.3",
-    "youtube-dl": "^1.12.2",
-    "ytdl-core": "^0.29.1"
+    "rimraf": "^2.6.3"
   }
 }
