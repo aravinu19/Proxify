@@ -16,9 +16,11 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
     "node-downloader-helper": "^1.0.10",
     "request": "^2.88.0",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "zombie": "^6.1.4"
   }
 }

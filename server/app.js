@@ -3,6 +3,7 @@ const fs = require('fs');
 const rmdir = require('rimraf');
 const request = require('request');
 const yt_handler = require('./yt_handler');
+const od_handler = require('./od_handler');
 
 var router = (app) => {
 
@@ -82,6 +83,28 @@ var router = (app) => {
 
     });
 
+    app.post('/getOdVideo', (req, res) => {
+
+        rmdir.sync("./public/odVideos");
+        fs.mkdirSync("./public/odVideos");
+
+       dmgr = new DownloaderHelper(req.body.vurl, "./public/odVideos", { fileName: "odVideo.mp4"});
+
+       dmgr.on('progress', (stats) => console.log(stats));
+
+       dmgr.on('end', () => {
+           res.send("../odVideos/odVideo.mp4");
+       });
+
+       dmgr.on('error', (err) => {
+           res.err(err);
+           console.log(err);
+       });
+
+       dmgr.start();
+
+    });
+
     app.post('/search', (req, res) => {
 
         let search_keywords = req.body.search_keywords;
@@ -101,6 +124,16 @@ var router = (app) => {
 
             
 
+        });
+
+    });
+
+    app.post('/odGetInfo', (req, res) => {
+
+        var url = req.body.url;
+
+        od_handler.collectIntel(url, (intel) => {
+            res.send(intel);
         });
 
     });

@@ -17,13 +17,15 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
-    <script src="./downloadmanager.js"></script>
+    <script src="./odmgr.js"></script>
+    <script src="../rhn.js"></script>
 
     <!--Test Script Start-->
         <script>
             window.onload = () => {
-
                 
+                loadTitle();
+                loadIndex();
 
             };
         </script>
@@ -33,33 +35,20 @@
 <body>
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 5px 5px  grey; border-radius: 7px; margin: 5px;">
-            <a class="navbar-brand" href="#"><h2>Proxify YT</h2></a>
+            <a class="navbar-brand" href="#"><h2>Proxify OD AWS COURSE</h2></a>
         </nav>
     </div>
 
-    <div class="row" style=" margin: 5%;">
-        <div class="container col-md-6">
-            <div id="yt_search" style="align-content: center; align-items: center; align-self: center;">
-                <input id="btn1" type="text"> <input id="btn2" class="btn btn-light" type="button" value="Get Video" onclick="getInfo()">
-            </div>
+    <div class="row col-md-12 justify-content-md-center">
+        <div class="col col-md-6">
+            <div id="title" class="title" style="text-align: center; margin: 5%;"></div>
+            <div id="courseIndex"></div>
+            <div id="subIndex"></div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="container col-md-6">
-            <div id="yt_details" style="align-content: center; align-items: center">
-                
-            </div>
-        </div>
-    </div>
+    <div id="videoView" class="row col-md-12 justify-content-md-center">
 
-
-    <div class="row">
-        <div class="container col-md-6">
-            <div id="yt_view" style="align-content: center; align-items: center">
-        
-            </div>
-        </div>
     </div>
     
 </body>
