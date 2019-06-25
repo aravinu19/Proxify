@@ -1,11 +1,7 @@
-FROM ubuntu:bionic
+FROM node:alpine
 
 WORKDIR /usr/local/proxify
 COPY . /usr/local/proxify
-
-RUN apt update && apt install npm wget -y
-RUN npm i -g n
-RUN n latest
 
 RUN npm install
 CMD npm start
