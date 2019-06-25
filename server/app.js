@@ -10,7 +10,7 @@ var router = (app) => {
     app.post('/getVideoInfo', (req, res) => {
 
         var URL = req.body.url;
-        var yt_info_url = "http://www.youtube.com/get_video_info?html5=1&video_id=";
+        var yt_info_url = "https://www.youtube.com/get_video_info?html5=1&video_id=";
 
         const validateUrl = /^(?:https?:\/\/)?(w{3})?\.?youtube\.com/.test(URL);
 
