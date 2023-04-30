@@ -15,9 +15,9 @@
     "url": "https://github.com/aravinu19/Proxify.git"
   },
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "cheerio": "^1.0.0-rc.2",
-    "express": "^4.17.3",
+    "express": "^4.18.2",
     "node-downloader-helper": "^1.0.10",
     "request": "^2.88.0",
     "rimraf": "^2.6.3",
